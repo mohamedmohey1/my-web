@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>All Expenses - Expense Tracker</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
+</head>
+<body>
+  <div class="app-layout">
+    <div id="sidebar-mount"></div>
+
+    <main class="main-content" id="expenses-page">
+      <div class="topbar">
+        <button class="menu-toggle" id="menu-toggle">☰</button>
+        <div>
+          <h1>All Expenses</h1>
+          <p class="subtitle">Search, filter, and manage every expense you've logged</p>
+        </div>
+        <a class="btn btn-primary" href="add.html">➕ Add Expense</a>
+      </div>
+
+      <section class="section-card">
+        <div class="filters-bar">
+          <div class="field" style="margin-bottom:0;">
+            <label for="search-input">Search</label>
+            <input type="text" id="search-input" placeholder="Search by note or category..." />
+          </div>
+          <div class="field" style="margin-bottom:0;">
+            <label for="category-filter-select">Category</label>
+            <select id="category-filter-select"></select>
+          </div>
+          <div class="field" style="margin-bottom:0;">
+            <label for="date-filter-input">Date</label>
+            <input type="date" id="date-filter-input" />
+          </div>
+          <div class="field" style="margin-bottom:0; display:flex; align-items:flex-end;">
+            <button class="btn btn-secondary" id="clear-filters-btn">Clear Filters</button>
+          </div>
+        </div>
+
+        <div class="table-wrapper" id="expenses-table-wrapper">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Date</th>
+                <th>Category</th>
+                <th>Amount</th>
+                <th>Note</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody id="expenses-table-body"></tbody>
+          </table>
+        </div>
+
+        <div class="empty-state" id="expenses-empty-state" style="display:none;">
+          <div class="empty-icon">🧾</div>
+          <p>You haven't added any expenses yet.</p>
+          <a class="btn btn-primary" href="add.html">Add your first expense</a>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>

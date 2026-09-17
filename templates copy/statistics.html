@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Statistics - Expense Tracker</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
+</head>
+<body>
+  <div class="app-layout">
+    <div id="sidebar-mount"></div>
+
+    <main class="main-content" id="statistics-page">
+      <div class="topbar">
+        <button class="menu-toggle" id="menu-toggle">☰</button>
+        <div>
+          <h1>Statistics</h1>
+          <p class="subtitle">Reports and trends based on your spending</p>
+        </div>
+      </div>
+
+      <section class="section-card">
+        <div class="filters-bar">
+          <div class="field" style="margin-bottom:0; max-width:220px;">
+            <label for="stats-month-filter">Filter by Month</label>
+            <select id="stats-month-filter"></select>
+          </div>
+        </div>
+
+        <div class="stat-grid">
+          <div class="card stat-card">
+            <div class="stat-icon">💰</div>
+            <div class="stat-label">Total Spent</div>
+            <div class="stat-value" id="stats-total">$0.00</div>
+          </div>
+          <div class="card stat-card">
+            <div class="stat-icon">🔢</div>
+            <div class="stat-label">Number of Expenses</div>
+            <div class="stat-value" id="stats-count">0</div>
+          </div>
+          <div class="card stat-card">
+            <div class="stat-icon">📐</div>
+            <div class="stat-label">Average Expense</div>
+            <div class="stat-value" id="stats-average">$0.00</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-card">
+        <h2>Spending by Category</h2>
+        <div class="bar-chart" id="stats-category-chart"></div>
+      </section>
+
+      <section class="section-card">
+        <h2>Spending by Month (Last 6 Months)</h2>
+        <div class="month-chart" id="stats-month-chart"></div>
+      </section>
+    </main>
+  </div>
+
+  <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About - Expense Tracker</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
+</head>
+<body>
+  <div class="app-layout">
+    <div id="sidebar-mount"></div>
+
+    <main class="main-content">
+      <div class="topbar">
+        <button class="menu-toggle" id="menu-toggle">☰</button>
+        <div>
+          <h1>About</h1>
+          <p class="subtitle">What this project is and how it works</p>
+        </div>
+      </div>
+
+      <section class="card about-content" style="max-width: 680px;">
+        <div class="about-icon">💰</div>
+        <h2>Expense Tracker</h2>
+        <p>
+          Expense Tracker is a simple personal finance web app that helps you
+          keep track of your day-to-day spending. Instead of relying on
+          scattered notes or memory, you can log every expense with an
+          amount, category, date, and optional note, and instantly see where
+          your money is going.
+        </p>
+        <p>
+          The goal of this project is to make personal budgeting approachable:
+          a clear dashboard shows your totals at a glance, the expenses list
+          lets you search and filter your history, and the statistics page
+          turns your data into simple charts so patterns are easy to spot.
+        </p>
+        <p>
+          All of your data is stored locally in your browser using
+          <code>localStorage</code>, so there is no account, server, or
+          database required. Everything stays on your device.
+        </p>
+
+        <ul class="feature-list">
+          <li>📊 Dashboard with totals and category breakdowns</li>
+          <li>🔍 Search and filter your full expense history</li>
+          <li>✏️ Add, edit, and delete expenses with confirmation</li>
+          <li>🗂️ Category and monthly spending reports</li>
+          <li>📱 Fully responsive on mobile, tablet, and desktop</li>
+          <li>💾 No backend needed — powered by localStorage</li>
+        </ul>
+
+        <p style="margin-top: 20px; color: var(--color-text-light); font-size: 0.85rem;">
+          Built with plain HTML, CSS, and JavaScript as a CS50 final project.
+        </p>
+      </section>
+    </main>
+  </div>
+
+  <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
