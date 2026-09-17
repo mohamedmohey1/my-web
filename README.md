@@ -1,18 +1,15 @@
-# Expense Tracker (Flask + SQLite)
+# Expense Tracker
 
-## Setup
-```bash
-pip install -r requirements.txt
-python app.py
-```
-Then open http://127.0.0.1:5000 in your browser.
+#### Video Demo: [Watch Video](https://youtu.be/K_HF28eGXlA)
 
-## Notes
-- The SQLite database file `expenses.db` is created automatically the first time you run the app.
-- All pages (Dashboard, Expenses, Add, Edit, Details, Categories, Statistics, About) are served by Flask from `templates/`.
-- The frontend JavaScript (`static/js/script.js`) talks to the JSON API below instead of using localStorage:
-  - `GET    /api/expenses`        - list all expenses
-  - `GET    /api/expenses/<id>`   - get one expense
-  - `POST   /api/expenses`        - create an expense
-  - `PUT    /api/expenses/<id>`   - update an expense
-  - `DELETE /api/expenses/<id>`   - delete an expense
+#### Description:
+
+I decided to use SQLite because I wanted the database setup to stay
+simple. The project does not need a large database system, and SQLite
+works well for storing the expenses locally. I also used a Flask API so
+that the JavaScript code can communicate with the Python backend and
+perform the different expense operations.
+
+I made this project to have a simple way to record and manage expenses.
+It was also a good way for me to practice building a complete web
+application using Python, Flask, SQLite, HTML, CSS, and JavaScript.
